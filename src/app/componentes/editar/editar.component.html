@@ -1,0 +1,20 @@
+<div class="container">
+    <button class="btn btn-primary" [routerLink]="['/']">Inicio</button>
+    <hr>
+    <form>
+        <div class="col-md-4">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="usuarioActualizar.nombre" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-4">
+          <label for="correo" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="correo" [(ngModel)]="usuarioActualizar.correo" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-4">
+          <label for="contraseña" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contraseña" [(ngModel)]="usuarioActualizar.contrasena" [ngModelOptions]="{standalone: true}">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" (click)="saveEditar()">Editar</button>
+      </form>
+</div>

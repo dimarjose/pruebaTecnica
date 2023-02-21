@@ -1,0 +1,26 @@
+<div class="container">
+    <!-- <button  class="btn btn-warning" on>Listar</button> -->
+    <button class="btn btn-success" [routerLink]="['agregar']" style="margin-left: 10px;">Nuevo</button>
+    <hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col" class="text-center">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of lista">
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.correo }}</td>
+            <td class="text-center">
+                <button class="btn btn-warning" [routerLink]="['/editar/', usuario.id]">Editar</button> &nbsp;
+                <button class="btn btn-danger" (click)="eliminar(usuario.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
